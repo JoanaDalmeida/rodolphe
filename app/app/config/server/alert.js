@@ -1,8 +1,8 @@
 var root = require('../../conf.json').url + "alerts/";
-var urlBuilder = require('./url-builder');
+var url = require('./url-builder');
 module.exports = {
-  getAll: urlBuilder(root, 'GET'),
-  update: urlBuilder(root + "/${id}",'PUT'),
-  create: urlBuilder(root, 'POST'),
-  ack: urlBuilder(root + "/${id}/ack", POST)
+  getAll: url(root, 'GET'),
+  update: url(root + "/${id}",'PUT'),
+  create: url(root, 'POST'),
+  ack: url(root + "/${id}/ack", 'POST')
 };

@@ -1,4 +1,5 @@
 var Hapi = require('hapi');
+var printRoutes = require('./util/print-routes');
 var routes = require('./routes');
 var config = {
   cors: true
@@ -8,4 +9,5 @@ server.connection({ port: 3001 });
 server.route(routes);
 server.start(function() {
   console.log('Server started at: ' + server.info.uri);
+  printRoutes(routes);
 });

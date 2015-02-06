@@ -23,7 +23,7 @@
 			<param name="locales" value="fr_FR" />
 		</component>
 		<component api="KSecurityManager" class="io.vertigo.persona.impl.security.KSecurityManagerImpl">
-			<param name="userSessionClassName" value="lollipop.user.LollipopUserSession" />
+			<param name="userSessionClassName" value="rodolphe.user.RodolpheUserSession" />
 			<plugin class="io.vertigo.persona.plugins.security.loaders.SecurityResourceLoaderPlugin" />
 		</component>
 	</module>
@@ -47,6 +47,6 @@
 
 	<module name="myApp">
 		<resource type="kpr" path="boot/application.kpr" />
-		<resource type="classes" path="lollipop.boot.DtDefinitions" />
+		<resource type="classes" path="rodolphe.boot.DtDefinitions" />
 	</module>
 </config>

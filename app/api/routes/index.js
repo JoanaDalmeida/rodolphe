@@ -1,19 +1,19 @@
 module.exports = [{
   method: 'GET',
-  path: '/alerts',
+  path: '/alerts/',
   config:{
     handler: require('./alerts-all')
   }
 },{
     method: 'POST',
-    path: '/alerts',
+    path: '/alerts/',
     config:{
       handler: require('./alerts-create')
     }
   },
   {
     method: 'POST',
-    path: '/alerts/{id}/ack',
+    path: '/alerts/{id}/accept/',
     config:{
       handler: require('./alerts-ack')
     }

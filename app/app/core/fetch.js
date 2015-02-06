@@ -33,7 +33,7 @@ module.exports =  function fetch(obj, options) {
       success(data);
     };
     //Execute the request.
-    request.send(obj.data);
+    request.send(JSON.stringify(obj.data));
   });
 
 };

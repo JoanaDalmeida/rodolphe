@@ -1,6 +1,6 @@
 var data = require('../data');
 module.exports = function(request, reply){
-  var alert = JSON.parse(request.payload);
+  var alert = request.payload;
   console.log(alert.id);
   console.log(request.params.id);
   if(request.params.id !== alert.id){

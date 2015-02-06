@@ -5,7 +5,7 @@ gulp.task('browserify', function(){
   return browserify(({entries: ['./index.js'], extensions: ['.jsx']}))
   .bundle()
   //Pass desired output filename to vinyl-source-stream
-  .pipe(source('react-backbone.js'))
+  .pipe(source('rodolphe.js'))
   .pipe(gulp.dest('./dist/'))
   .pipe(gulp.dest('./example/js'));
 });

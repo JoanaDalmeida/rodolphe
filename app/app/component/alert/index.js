@@ -4,10 +4,11 @@ var fetch = require('../../core/fetch');
 var Alert = require('./Alert');
 var defaults = require('lodash/object/defaults');
 var remove = require('lodash/array/remove');
+var find = require('lodash/collection/find');
 
 module.exports = React.createClass({
   getDefaultProps: function(){
-    return {hasAutoRefresh: true}
+    return {hasAutoRefresh: false};
   },
   /**
    * Get the state initial values.
@@ -29,14 +30,18 @@ module.exports = React.createClass({
   },
   handleBtnAcceptClick: function handleBtnAcceptClick(id){
     var component = this;
+    var alerts = component.state.alerts;
+    var alertToAccept = find(alerts, function(alert){return alert.id === id;});
     fetch({
       url: 'http://localhost:8080/alerts/'+ id +'/accept/',
-      type: "POST"
+      type: "POST",
+      data: alertToAccept
     }).then(function(success){
-      component.setState({alerts: remove(component.state.alerts, function(alert){
-        return alert.id !== id;
-      })});
-    }, function(err){
+      remove(alerts, function(alert){
+        return alert.id === id;
+      });
+      component.setState({alerts: alerts});
+      }, function(err){
       console.error(err);
     });
   },

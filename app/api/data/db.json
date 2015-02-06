@@ -1,92 +1,112 @@
 {
     "33f08d7d-cd03-4e46-981f-08a0b51c0a32": {
         "id": "33f08d7d-cd03-4e46-981f-08a0b51c0a32",
-        "msg": "L'application est en danger...",
-        "ttl": 10,
-        "type": "danger",
-        "code": "Securité",
-        "url": "http://github.com/KleeGroup",
-        "ack": true
+        "ack": true,
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "code": "Information",
+        "type": "info"
     },
     "4ec9da01-fa76-4ee6-8fc7-02ccd8d192da": {
         "id": "4ec9da01-fa76-4ee6-8fc7-02ccd8d192da",
-        "msg": "YOOOOOOOOOOOOOOOOOO",
-        "ttl": 10,
-        "type": "warning",
-        "code": "Security",
-        "url": "http://github.com/pierr"
+        "ack": true,
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "code": "Information",
+        "type": "info"
     },
     "1c33606b-4ad2-47ea-bcc2-2cb9831ef47b": {
-        "msg": "L'application est en danger...",
-        "ttl": 10,
-        "type": "danger",
-        "code": "Securité",
-        "url": "http://github.com/KleeGroup",
-        "id": "1c33606b-4ad2-47ea-bcc2-2cb9831ef47b"
+        "id": "1c33606b-4ad2-47ea-bcc2-2cb9831ef47b",
+        "ack": true,
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "code": "Information",
+        "type": "info"
     },
     "c479f77e-a21f-4603-9e78-5b86a4cb7cda": {
-        "msg": "L'application est en danger...",
-        "ttl": 10,
-        "type": "danger",
-        "code": "Securité",
-        "url": "http://github.com/KleeGroup",
-        "id": "c479f77e-a21f-4603-9e78-5b86a4cb7cda"
+        "id": "c479f77e-a21f-4603-9e78-5b86a4cb7cda",
+        "ack": true,
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "code": "Information",
+        "type": "info"
     },
     "ca2474d9-db40-4670-8790-966c5c34730b": {
-        "msg": "L'application est en danger...",
-        "ttl": 10,
-        "type": "danger",
-        "code": "Securité",
-        "url": "http://github.com/KleeGroup",
-        "id": "ca2474d9-db40-4670-8790-966c5c34730b"
+        "id": "ca2474d9-db40-4670-8790-966c5c34730b",
+        "ack": true,
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "code": "Information",
+        "type": "info"
     },
     "da4ac209-fba3-48d9-bce9-96ecd3ecedc6": {
-        "msg": "L'application est en danger...",
-        "ttl": 10,
-        "type": "danger",
-        "code": "Securité",
-        "url": "http://github.com/KleeGroup",
-        "id": "da4ac209-fba3-48d9-bce9-96ecd3ecedc6"
+        "id": "da4ac209-fba3-48d9-bce9-96ecd3ecedc6",
+        "ack": true,
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "code": "Information",
+        "type": "info"
     },
     "67ed8f90-3b49-4824-893b-9fe48a1c81ed": {
-        "msg": "L'application est en danger...",
-        "ttl": 10,
-        "type": "danger",
-        "code": "Securité",
-        "url": "http://github.com/KleeGroup",
-        "id": "67ed8f90-3b49-4824-893b-9fe48a1c81ed"
+        "id": "67ed8f90-3b49-4824-893b-9fe48a1c81ed",
+        "ack": true,
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "code": "Information",
+        "type": "info"
     },
     "8e54f45c-5d21-4344-b4b9-08b844bffff5": {
-        "msg": "L'application est en danger...",
-        "ttl": 10,
-        "type": "danger",
-        "code": "Securité",
-        "url": "http://github.com/KleeGroup",
-        "id": "8e54f45c-5d21-4344-b4b9-08b844bffff5"
+        "id": "8e54f45c-5d21-4344-b4b9-08b844bffff5",
+        "ack": true,
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "code": "Information",
+        "type": "info"
     },
     "900b94e4-9bd0-4357-9768-04f691789d99": {
-        "msg": "L'application est en danger...",
-        "ttl": 10,
-        "type": "danger",
-        "code": "Securité",
-        "url": "http://github.com/KleeGroup",
-        "id": "900b94e4-9bd0-4357-9768-04f691789d99"
+        "id": "900b94e4-9bd0-4357-9768-04f691789d99",
+        "ack": true,
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "code": "Information",
+        "type": "info"
     },
     "b8394640-cb9d-4d6d-9762-fb8fc053107c": {
-        "msg": "L'application est en danger...",
-        "ttl": 10,
-        "type": "danger",
-        "code": "Securité",
-        "url": "http://github.com/KleeGroup",
-        "id": "b8394640-cb9d-4d6d-9762-fb8fc053107c"
+        "id": "b8394640-cb9d-4d6d-9762-fb8fc053107c",
+        "ack": true,
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "code": "Information",
+        "type": "info"
     },
     "9cd821a6-bd4a-44be-969c-5f0cba958508": {
-        "msg": "L'application est en bon état...",
-        "ttl": 10,
-        "type": "success",
-        "code": "Securité",
-        "url": "http://github.com/KleeGroup",
         "id": "9cd821a6-bd4a-44be-969c-5f0cba958508",
-        "ack": true
+        "ack": true,
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "code": "Information",
+        "type": "info"
     }
 }

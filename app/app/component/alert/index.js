@@ -30,7 +30,7 @@ module.exports = React.createClass({
   handleBtnAcceptClick: function handleBtnAcceptClick(id){
     var component = this;
     fetch({
-      url: 'http://localhost:8080/alerts/'+ id +'/accept',
+      url: 'http://localhost:8080/alerts/'+ id +'/accept/',
       type: "POST"
     }).then(function(success){
       component.setState({alerts: remove(component.state.alerts, function(alert){

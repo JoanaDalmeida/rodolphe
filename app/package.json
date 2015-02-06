@@ -36,7 +36,6 @@
     "backbone": "^1.1.2",
     "backbone-react-component": "~0.7.3",
     "es6-promise": "^2.0.1",
-    "es6-templates": "^0.2.2",
     "lodash": "^3.0.1",
     "material-ui": "^0.5.0",
     "node-fetch": "~1.0.3",

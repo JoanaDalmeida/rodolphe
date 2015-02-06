@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
 		<maven.test.error.ignore>true</maven.test.error.ignore>
-		<vertigo.version>0.7.2</vertigo.version>
+		<vertigo.version>0.7.3</vertigo.version>
 	</properties>
 
     <dependencies>
@@ -63,6 +63,11 @@
             <artifactId>vertigo-vega-impl</artifactId>
             <version>${vertigo.version}</version>
         </dependency>
+   		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
     </dependencies>
 
 	<build>

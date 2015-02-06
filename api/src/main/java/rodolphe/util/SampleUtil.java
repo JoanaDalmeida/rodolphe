@@ -1,4 +1,4 @@
-package lollipop.util;
+package rodolphe.util;
 
 /**
  * Util classes publish easier method or are stateLess.

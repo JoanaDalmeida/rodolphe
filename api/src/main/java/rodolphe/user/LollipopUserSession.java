@@ -1,4 +1,4 @@
-package lollipop.user;
+package rodolphe.user;
 
 import io.vertigo.persona.security.UserSession;
 

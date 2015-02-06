@@ -1,4 +1,4 @@
-package lollipop.webservices.commons;
+package rodolphe.webservices.commons;
 
 import io.vertigo.vega.rest.RestfulService;
 import io.vertigo.vega.rest.stereotype.AnonymousAccessAllowed;
@@ -11,8 +11,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import lollipop.domain.commons.Alert;
-import lollipop.services.commons.AlertServices;
+import rodolphe.domain.commons.Alert;
+import rodolphe.services.commons.AlertServices;
 
 @PathPrefix("/alerts")
 public class AlertWebServices implements RestfulService {

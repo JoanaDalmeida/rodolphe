@@ -1,4 +1,4 @@
-package lollipop.services.commons;
+package rodolphe.services.commons;
 
 import io.vertigo.lang.Assertion;
 import io.vertigo.persona.security.UserSession;
@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import lollipop.domain.commons.Alert;
+import rodolphe.domain.commons.Alert;
 
 public final class AlertServicesImpl implements AlertServices {
 	private final Map<Long, Alert> alerts = new HashMap<>();

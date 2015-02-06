@@ -1,4 +1,4 @@
-package lollipop.domain.commons;
+package rodolphe.domain.commons;
 
 import io.vertigo.dynamo.domain.model.DtObject;
 import io.vertigo.dynamo.domain.stereotype.DtDefinition;

@@ -16,19 +16,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package lollipop.boot;
+package rodolphe.boot;
 
 import java.util.Arrays;
 import java.util.Iterator;
 
-import lollipop.domain.Flower;
-import lollipop.domain.commons.Alert;
+import rodolphe.domain.commons.Alert;
 
 public final class DtDefinitions implements Iterable<Class<?>> {
 	@Override
 	public Iterator<Class<?>> iterator() {
 		return Arrays.asList(new Class<?>[] {
-				Flower.class,
 				Alert.class,
 		}).iterator();
 	}

@@ -79,5 +79,14 @@
         "code": "Securité",
         "url": "http://github.com/KleeGroup",
         "id": "b8394640-cb9d-4d6d-9762-fb8fc053107c"
+    },
+    "9cd821a6-bd4a-44be-969c-5f0cba958508": {
+        "msg": "L'application est en bon état...",
+        "ttl": 10,
+        "type": "success",
+        "code": "Securité",
+        "url": "http://github.com/KleeGroup",
+        "id": "9cd821a6-bd4a-44be-969c-5f0cba958508",
+        "ack": true
     }
 }

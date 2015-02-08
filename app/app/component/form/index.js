@@ -1,5 +1,5 @@
 var React = require('react');
-var action = require('../action/form');
+var action = require('../../action/form');
 var Input =  require('./input');
 var Select =  require('./select');
 
@@ -9,31 +9,35 @@ module.exports = {
       hasEdit: true,
       isEdit: false};
   },
-  input: (name)=>{
+  input: function(name){
     return React.createElement(Input, {name: name});
   },
-  select: (name)=>{
+  select: function(name){
     return React.createElement(Select, {name: name});
   },
   /**
    * Get the state initial values.
    * @returns {{alerts: Array}}
    */
-  getInitialState:()=>{
+  getInitialState:function(){
     return{
       id: this.props.id
     };
   },
-  componentDidMount: ()=>{
+  componentDidMount: function(){
     this._loadData();
   },
-  _getId: ()=>{
+  _getId: function(){
     return this.state.id;
   },
-  _loadData: ()=>{
+  _loadData: function(){
     action.loadEntity(this._getId());
   },
-  render: ()=>{
-    throw new Error('Not Implemented');
+  render: function (){
+    return (
+      <form>
+      {this.renderContent()}
+      </form>
+    );
   }
 };

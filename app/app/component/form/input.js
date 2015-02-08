@@ -1,7 +1,8 @@
+var React = require('react');
 module.exports = React.createClass({
   getDefaultProps: function getInputDefaultProps(){
     return {
-      type: text,
+      type: 'text',
       value: undefined,
       name: undefined
     };

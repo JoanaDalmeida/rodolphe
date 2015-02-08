@@ -51,7 +51,7 @@ module.exports = React.createClass({
    */
   renderAlerts: function(){
     return this.state.alerts.map(function(alert){
-      return <Alert data={alert} onAckClick={this.handleBtnAcceptClick.bind(this, alert.id)} />;
+      return <Alert data={alert} key={alert.id} onAckClick={this.handleBtnAcceptClick.bind(this, alert.id)} />;
     }, this);
   },
   /**
@@ -60,7 +60,7 @@ module.exports = React.createClass({
    */
   render: function() {
     return (
-      <div class="alertes">
+      <div className="alertes">
         <h2>Notification center <button className="btn btn-default" onClick={this.handleBtnReloadClick}>rld</button></h2>
         {this.renderAlerts()}
       </div>

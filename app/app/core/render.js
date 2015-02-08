@@ -11,6 +11,6 @@ module.exports =  (component,selector, options) =>{
   options = options || {};
   React.render(
     React.createElement(component, options.props, options.data),
-    document.querySelector('#notification-center')
+    document.querySelector(selector)
   );
 };

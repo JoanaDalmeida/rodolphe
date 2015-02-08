@@ -1,5 +1,4 @@
 var React = require('react');
-var action = require('../../action/form');
 var Field =  require('./field').component;
 var Select =  require('./select').component;
 
@@ -12,7 +11,7 @@ var formMixin = {
   fieldFor: function(name){
     return React.createElement(Field, {name: name});
   },
-  select: function(name){
+  selectFor: function(name){
     return React.createElement(Select, {name: name});
   },
   /**
@@ -31,7 +30,7 @@ var formMixin = {
     return this.state.id;
   },
   _loadData: function(){
-    action.loadEntity(this._getId());
+    this.action.loadEntity(this._getId());
   },
   _className: function(){
     return "form-horizontal";

@@ -1,13 +1,13 @@
 //Get the form mixin.
 var React = require('react');
-var formMixin = require('../../component/form');
+var formMixin = require('../../component/form').mixin;
 module.exports =  React.createClass({
   mixins: [formMixin],
   renderContent:function (){
     return(
       <div>
-        {this.input("login")}
-        {this.input("password")}
+        {this.fieldFor("login")}
+        {this.fieldFor("password")}
       </div>
     );
   }

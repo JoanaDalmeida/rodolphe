@@ -1,16 +1,16 @@
 var React = require('react');
 var action = require('../../action/form');
-var Input =  require('./input');
-var Select =  require('./select');
+var Field =  require('./field').component;
+var Select =  require('./select').component;
 
-module.exports = {
+var formMixin = {
   getDefaultProps: ()=>{
     return {
       hasEdit: true,
       isEdit: false};
   },
-  input: function(name){
-    return React.createElement(Input, {name: name});
+  fieldFor: function(name){
+    return React.createElement(Field, {name: name});
   },
   select: function(name){
     return React.createElement(Select, {name: name});
@@ -33,11 +33,19 @@ module.exports = {
   _loadData: function(){
     action.loadEntity(this._getId());
   },
+  _className: function(){
+    return "form-horizontal";
+  },
   render: function (){
     return (
-      <form>
-      {this.renderContent()}
+      <form className={this._className()}>
+        {this.renderContent()}
       </form>
     );
   }
 };
+
+module.exports = {
+  mixin: formMixin,
+  component: React.createElement(formMixin)
+}

@@ -17,4 +17,11 @@ module.exports = [{
     config:{
       handler: require('./alerts-ack')
     }
+},
+{
+  method: 'GET',
+  path: '/user/{id}/',
+  config:{
+    handler: require('./user-get')
+  }
 }];

@@ -1,18 +1,28 @@
 {
-"33f08d7d-cd03-4e46-981f-08a0b51c0a32":  {
-    "id": "33f08d7d-cd03-4e46-981f-08a0b51c0a32",
-    "msg": "Bonjour les amis, voici un test...",
-    "ttl": 10,
-    "type": "info",
-    "code": "Information",
-    "url": "http://github.com/KleeGroup"
-  },
-  "4ec9da01-fa76-4ee6-8fc7-02ccd8d192da": {
-    "id": "4ec9da01-fa76-4ee6-8fc7-02ccd8d192da",
-    "msg": "YOOOOOOOOOOOOOOOOOO...",
-    "ttl": 10,
-    "type": "warning",
-    "code": "Security",
-    "url": "http://github.com/pierr"
-  }
+    "33f08d7d-cd03-4e46-981f-08a0b51c0a32": {
+        "id": "33f08d7d-cd03-4e46-981f-08a0b51c0a32",
+        "msg": "Bonjour les amis, voici un test...",
+        "ttl": 10,
+        "type": "info",
+        "code": "Information",
+        "url": "http://github.com/KleeGroup",
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "ack": true
+    },
+    "4ec9da01-fa76-4ee6-8fc7-02ccd8d192da": {
+        "id": "4ec9da01-fa76-4ee6-8fc7-02ccd8d192da",
+        "msg": "YOOOOOOOOOOOOOOOOOO...",
+        "ttl": 10,
+        "type": "warning",
+        "code": "Security",
+        "url": "http://github.com/pierr",
+        "target": {
+            "url": "http://google.com",
+            "name": "google..."
+        },
+        "ack": true
+    }
 }

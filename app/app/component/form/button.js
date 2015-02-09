@@ -5,8 +5,7 @@ var buttonMixin = {
     return {
       type: 'submit',
       action: undefined,
-      isPressed: false,
-      key: undefined
+      isPressed: false
     };
   },
   handleOnClick: function(){
@@ -39,12 +38,15 @@ var buttonMixin = {
     if(this.state.isPressed){
       return this.renderPressedButton();
     }
+    console.log("button",this.props);
     return(
         <button
           onClick={this.onClick}
           type={this.props.type}
-          className={this._className}
-        >{this.props.key}</button>
+          className={this._className()}
+        >
+        {this.props.label}
+        </button>
     );
   }
 };

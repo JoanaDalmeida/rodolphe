@@ -11,8 +11,10 @@ module.exports =  React.createClass({
   renderContent:function (){
     return(
       <div>
-        {this.fieldFor("login")}
-        {this.fieldFor("password")}
+        {this.fieldFor("streetNumber")}
+        {this.fieldFor("streetName")}
+        {this.fieldFor("zipCode")}
+        {this.fieldFor("city")}
         {this.buttonSave()}
       </div>
     );

@@ -19,7 +19,8 @@ var inputMixin = {
           name={this.props.name}
           value={this.props.value}
           type={this.props.type}
-          className={this.props.css} 
+          className={this.props.css}
+          ref={this.props.name} 
         />
     );
   }

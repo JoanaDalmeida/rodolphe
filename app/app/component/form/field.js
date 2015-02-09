@@ -41,6 +41,7 @@ var FieldMixin = {
           name={this.props.name}
           value={this.props.value}
           type = {this.props.type}
+          ref={this.props.ref}
         />
       </div>
     );

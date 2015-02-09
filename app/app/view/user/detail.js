@@ -7,10 +7,13 @@ module.exports =  React.createClass({
   action: actionUser,
   renderContent:function (){
     return(
-      <div>
-        {this.fieldFor("login")}
-        {this.fieldFor("password")}
-        {this.buttonSave()}
+      <div className="panel panel-default">
+        <div className="panel-heading">{"Fiche de l'utilisateur"}</div>
+        <div className="panel-body">
+          {this.fieldFor("login")}
+          {this.fieldFor("password")}
+          {this.buttonSave()}
+        </div>
       </div>
     );
   }

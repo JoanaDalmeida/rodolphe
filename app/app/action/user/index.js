@@ -1,4 +1,5 @@
 var AppDispatcher = require('../../dispatcher');
+
 module.exports = {
   load: function(userId){
 

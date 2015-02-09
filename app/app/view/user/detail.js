@@ -1,13 +1,10 @@
 //Get the form mixin.
 var React = require('react');
 var formMixin = require('../../component/form').mixin;
-var action = require('../../action/user');
+var actionUser = require('../../action/user');
 module.exports =  React.createClass({
   mixins: [formMixin],
-  action: {
-    loadEntity: action.load,
-    saveEntity: action.save
-  },
+  action: actionUser,
   renderContent:function (){
     return(
       <div>

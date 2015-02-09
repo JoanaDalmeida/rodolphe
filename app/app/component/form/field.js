@@ -13,7 +13,7 @@ var FieldMixin = {
     };
   },
   _className: function(){
-    var stateClass =  this.props.error ?   "hasFeedback hasDanger" : "";
+    var stateClass =  this.props.error ?   "has-feedback has-error" : "";
     return "form-group " + stateClass;
   },
   label: function(){
@@ -25,9 +25,12 @@ var FieldMixin = {
           name={this.props.name}
           key={this.props.name}
         >
-        {this.props.name}
+          {this.props.name}
         </label>);
     }
+  },
+  validate: function(){
+    this.refs['input'].validate();
   },
   input: function(){
     var inputClassName = "col-sm-" + (12 - this.props.labelSize);
@@ -41,7 +44,7 @@ var FieldMixin = {
           name={this.props.name}
           value={this.props.value}
           type = {this.props.type}
-          ref={this.props.ref}
+          ref="input"
         />
       </div>
     );
@@ -49,6 +52,7 @@ var FieldMixin = {
   error: function(){
     if(this.props.error){
       return (
+        /*<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>*/
         <span id="helpBlock" class="help-block">{this.props.error}</span>
       )
     }

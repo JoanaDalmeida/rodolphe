@@ -10,10 +10,11 @@ var formMixin = {
     };
   },
   fieldFor: function(name){
+
     return React.createElement(Field, {
       name: name,
-      ref: name
-      /*, error: "test d'erreur"*/
+      ref: name,
+      error: this.state.error ? this.state.error[name] : undefined
     });
   },
   selectFor: function(name){
@@ -38,7 +39,7 @@ var formMixin = {
     return this.state.id;
   },
   _loadData: function(){
-    this.action.loadEntity(this._getId());
+    this.action.load(this._getId());
   },
   _className: function(){
     return "form-horizontal";
@@ -49,7 +50,18 @@ var formMixin = {
   _handleSubmitForm: function(e){
     e.preventDefault();
     console.log("submit", this.refs);
-    this.action.saveEntity(this._getEntity());
+    this.validate();
+    this.action.save(this._getEntity());
+    return false;
+  },
+  validate: function validateForm(){
+    var validationMap = {};
+    for(var inptKey in this.refs){
+        validationMap[inptKey] = this.refs[inptKey].validate();
+    }
+    validationMap["login"] =  "Le login est invalide";
+    this.setState({error: validationMap});
+    //console.log(validationMap);
   },
   render: function (){
     return (

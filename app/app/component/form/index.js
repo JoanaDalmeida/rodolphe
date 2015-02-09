@@ -9,7 +9,7 @@ var formMixin = {
       isEdit: false};
   },
   fieldFor: function(name){
-    return React.createElement(Field, {name: name});
+    return React.createElement(Field, {name: name/*, error: "test d'erreur"*/});
   },
   selectFor: function(name){
     return React.createElement(Select, {name: name});

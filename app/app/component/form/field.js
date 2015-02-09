@@ -48,7 +48,7 @@ var FieldMixin = {
   error: function(){
     if(this.props.error){
       return (
-        <span id="helpBlock" class="help-block">this.props.error</span>
+        <span id="helpBlock" class="help-block">{this.props.error}</span>
       )
     }
   },

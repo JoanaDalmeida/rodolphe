@@ -5,7 +5,7 @@ module.exports =  React.createClass({
     return (
       <div className="userDetail">
         <h2>{"Detail d'un utilisateur"}</h2>
-        <UserDetail userId={this.props.userId} />
+        <UserDetail userId={this.props.userId}/>
       </div>
     );
   }

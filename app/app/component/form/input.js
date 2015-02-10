@@ -8,10 +8,6 @@ var inputMixin = {
       name: undefined
     };
   },
-  validate: function(){
-    console.log('validation called');
-    return true;
-  },
   /**
    * Render an input.
    * @return {[type]} [description]
@@ -23,8 +19,7 @@ var inputMixin = {
           name={this.props.name}
           value={this.props.value}
           type={this.props.type}
-          className={this.props.css}
-          ref={this.props.name}
+          className={this.props.css} 
         />
     );
   }

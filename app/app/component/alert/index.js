@@ -34,7 +34,7 @@ module.exports = React.createClass({
     var alertToAccept = find(alerts, function(alert){return alert.id === id;});
     fetch({
       url: 'http://localhost:8080/alerts/'+ id +'/accept/',
-      type: "POST",
+      method: "POST",
       data: alertToAccept
     }).then(function(success){
       remove(alerts, function(alert){
@@ -71,7 +71,7 @@ module.exports = React.createClass({
    */
   _loadData: function(){
     var component =  this;
-    fetch({url: "http://localhost:8080/alerts/", type: "GET"})
+    fetch({url: "http://localhost:8080/alerts/", method: "GET"})
       .then(function(data){
         component.setState({alerts: data});
         if(component.props.hasAutoRefresh){

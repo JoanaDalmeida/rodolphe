@@ -6,7 +6,7 @@ var createCORSRequest = require('./cors');
 module.exports =  function fetch(obj, options) {
   options = options || {};
   options.parser = options.parser || function(request){return JSON.parse(request.responseText)};
-  var request = createCORSRequest(obj.type, obj.url, options);
+  var request = createCORSRequest(obj.method, obj.url, options);
   if (!request) {
     throw new Error('You cannot perform ajax request on other domains.');
   }

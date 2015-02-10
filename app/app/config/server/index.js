@@ -1,3 +1,4 @@
 module.exports= {
-  alert: require(alert)
+  alert: require('./alert'),
+  user: require('./user')
 };

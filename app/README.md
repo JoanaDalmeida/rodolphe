@@ -5,6 +5,7 @@ Rodolphe
 
 - Install [Nodejs](http://nodejs.org/)
 - Run `npm install` in the directory
+- Install `gulp` with the command `npm install -g gulp`
 
 ## Start the application
 

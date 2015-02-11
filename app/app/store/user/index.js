@@ -1,46 +1,58 @@
-var AppDispatcher = require('../dispatcher/AppDispatcher');
+var AppDispatcher = require('../../dispatcher');
 var EventEmitter = require('events').EventEmitter;
-var TodoConstants = require('../constants/TodoConstants');
 var assign = require('object-assign');
+//var uuid = require('uuid');
 
 var CHANGE_EVENT = 'change';
 
 var USER_ACTIONS = {
-  CREATE:"",
+  "UPDATE": "UPDATE",
+  "CREATE": "CREATE",
+  "DELETE": "DELETE"
 };
 
-var _todos = {}; // collection of todo items
 
-/**
- * Create a TODO item.
- * @param {string} text The content of the TODO
- */
-function create(text) {
-  // Using the current timestamp in place of a real id.
-  var id = Date.now();
-  _todos[id] = {
-    id: id,
-    complete: false,
-    text: text
-  };
-}
+var _users = {}; // object which represents a user.
 
 /**
  * Delete a TODO item.
  * @param {string} id
  */
 function destroy(id) {
-  delete _todos[id];
+  delete _users[id];
+}
+function update(user){
+  _users[user.id] = assign(_users[user.id], user);
+}
+function create(user){
+  _users[user.id] = user;
+}
+function insert(user){
+  _users[user.id] = user;
 }
 
-var TodoStore = assign({}, EventEmitter.prototype, {
+function get(id){
+  return _users[id];
+}
 
+
+var UserStore = assign({}, EventEmitter.prototype, {
+
+  /**
+   * Load a user by its id.
+   * @param  {string} id - User identifier.
+   * @return {[type]}    [description]
+   */
+  get: function(id){
+    return get(id);
+  },
   /**
    * Get the entire collection of TODOs.
    * @return {object}
    */
-  getAll: function() {
-    return _todos;
+  update: function(user) {
+    update(user) ;
+    this.emit(CHANGE_EVENT);
   },
 
   emitChange: function() {
@@ -63,20 +75,22 @@ var TodoStore = assign({}, EventEmitter.prototype, {
 
   dispatcherIndex: AppDispatcher.register(function(payload) {
     var action = payload.action;
-    var text;
-
-    switch(action.actionType) {
-      case TodoConstants.TODO_CREATE:
-        text = action.text.trim();
-        if (text !== '') {
-          create(text);
-          TodoStore.emitChange();
-        }
+    var user = action.data;
+    switch(action.type) {
+      case USER_ACTIONS.CREATE:
+          create(user);
+          UserStore.emitChange();
         break;
-
-      case TodoConstants.TODO_DESTROY:
+      case USER_ACTIONS.DELETE:
         destroy(action.id);
-        TodoStore.emitChange();
+        UserStore.emitChange();
+        break;
+      case USER_ACTIONS.UPDATE:
+        update(user);
+        break;
+      case "user:load":
+        insert(user);
+        UserStore.emitChange();
         break;
 
       // add more cases for other actionTypes, like TODO_UPDATE, etc.

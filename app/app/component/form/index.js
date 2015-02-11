@@ -14,6 +14,7 @@ var formMixin = {
     return React.createElement(Field, {
       name: name,
       ref: name,
+      value: this.state[name],
       error: this.state.error ? this.state.error[name] : undefined
     });
   },
@@ -33,8 +34,25 @@ var formMixin = {
       id: this.props.id
     };
   },
-  componentDidMount: function(){
+  /**
+   * Event handler for 'change' events coming from the stores
+   */
+  _onChange: function() {
+    this.setState(this.getStateFromStores());
+  },
+  callMountedActions: function(){
     this._loadData();
+  },
+  componentDidMount: function(){
+    if(this.registerListeners){
+      this.registerListeners();
+    }
+    if(this.callMountedActions){
+      this.callMountedActions();
+    }
+  },
+  componentWillUnmount: function(){
+    this.unregisterListeners();
   },
   _getId: function(){
     return this.state.id;

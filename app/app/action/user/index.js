@@ -4,9 +4,9 @@ var URL = require('../../config/server');
 module.exports = {
   load: function(userId){
     fetch(URL.user.get({id:userId})).then(function(data){
-      AppDispatcher.dispatch('user:loaded', data);
+      AppDispatcher.handleServerAction({type: "user:load", data: data});
     }).then(null, function(err){
-      AppDispatcher.dispatch('user:loaded:error', err);
+      AppDispatcher.handleServerAction({type: 'user:loaded:error', error: err});
     });
   },
   save: function(data){

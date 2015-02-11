@@ -21,5 +21,5 @@ var labelMixin = {
 
 module.exports =  {
   mixin: labelMixin,
-  component: React.createElement(labelMixin)
+  component: React.createClass(labelMixin)
 }

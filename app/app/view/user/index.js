@@ -9,7 +9,7 @@ module.exports =  React.createClass({
       <div className="row">
         <h2>{"Detail d'un utilisateur"}</h2>
         <div className="userDetail col-xs-8">
-          <UserDetail id={this.props.userId}/>
+          <UserDetail id={this.props.userId} isEdit={true}/>
           <UserAddress id={this.props.userId} />
         </div>
         <div className="userSummary col-xs-4">

@@ -6,7 +6,7 @@ var assign = require('object-assign');
 var CHANGE_EVENT = 'change';
 
 var USER_ACTIONS = {
-  CREATE:
+  CREATE:"",
 };
 
 var _todos = {}; // collection of todo items

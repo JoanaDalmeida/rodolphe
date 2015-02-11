@@ -22,3 +22,9 @@ Rodolphe
 ## React
 
 - Build component not templates
+
+## ToREAD
+
+- keymirror of facebook
+- immutableData
+- jest for tests

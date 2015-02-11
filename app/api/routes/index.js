@@ -20,7 +20,7 @@ module.exports = [{
 },
 {
   method: 'GET',
-  path: '/user/{id}/',
+  path: '/users/{id}/',
   config:{
     handler: require('./user-get')
   }

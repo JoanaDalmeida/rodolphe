@@ -92,7 +92,6 @@ var UserStore = assign({}, EventEmitter.prototype, {
         insert(user);
         UserStore.emitChange();
         break;
-
       // add more cases for other actionTypes, like TODO_UPDATE, etc.
     }
 

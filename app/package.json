@@ -44,13 +44,16 @@
     "react": "^0.12.2",
     "reflux": "^0.2.5",
     "uuid": "^2.0.1",
-    "whatwg-fetch": "~0.7.0"
+    "whatwg-fetch": "~0.7.0",
+    "js-csp": "~0.3.3"
   },
   "browserify": {
     "transform": [
       [
         "reactify",
-        {"es6": true}
+        {
+          "es6": true
+        }
       ]
     ]
   }

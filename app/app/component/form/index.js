@@ -34,16 +34,43 @@ var formMixin = {
       id: this.props.id
     };
   },
+  _getStateFromStores: function(){
+    if(this.getStateFromStore){
+      return this.getStateFromStore();
+    }
+    if(this.stores.length === 1){
+      return this.stores[0].value.get(this.props.id);
+    }
+    var  newState = {}; this.stores.map((store)=>{
+      newState[store.name] = store.value.get(this.props.id);
+    });
+    return newState;
+  },
   /**
    * Event handler for 'change' events coming from the stores
    */
   _onChange: function() {
-    this.setState(this.getStateFromStores());
+    this.setState(this._getStateFromStores());
   },
   callMountedActions: function(){
     this._loadData();
   },
+  _registerListeners: function(){
+    if(this.stores){
+      this.stores.map((store)=>{
+        store.value.addChangeListener(this._onChange);
+      });
+    }
+  },
+  _unRegisterListeners: function(){
+    if(this.stores){
+      this.stores.map((store)=>{
+        store.value.removeChangeListener(this._onChange);
+      });
+    }
+  },
   componentDidMount: function(){
+    this._registerListeners();
     if(this.registerListeners){
       this.registerListeners();
     }
@@ -52,6 +79,7 @@ var formMixin = {
     }
   },
   componentWillUnmount: function(){
+    this._unRegisterListeners();
     this.unregisterListeners();
   },
   _getId: function(){

@@ -2,11 +2,12 @@
 var React = require('react');
 var formMixin = require('../../component/form').mixin;
 var Block = require('../../component/form/block').component;
-var actionUser = require('../../action/user');
+var actionsUser = require('../../action/user');
 var UserStore = require('../../store/user');
 module.exports =  React.createClass({
   mixins: [formMixin],
-  registerListeners: function registerUserDetailListeners(){
+  stores: [{name: "user", value: UserStore}],
+ /* registerListeners: function registerUserDetailListeners(){
     UserStore.addChangeListener(this._onChange);
   },
   unregisterListeners: function unregisterUserDetailListeners(){
@@ -14,8 +15,9 @@ module.exports =  React.createClass({
   },
   getStateFromStores: function getStateFromStores(){
     return UserStore.get(this.props.id);
-  },
-  action: actionUser,
+  },*/
+  action: actionsUser,
+
   renderContent:function renderUserDetail(){
     return(
         <Block title={"Fiche de l'utilisateur"}>

@@ -86,7 +86,7 @@ var formMixin = {
     return this.state.id;
   },
   _loadData: function(){
-    this.action.load(this._getId());
+    this.actions.load(this._getId());
   },
   _className: function(){
     return "form-horizontal";
@@ -98,7 +98,7 @@ var formMixin = {
     e.preventDefault();
     console.log("submit", this.refs);
     this.validate();
-    this.action.save(this._getEntity());
+    this.actions.save(this._getEntity());
     return false;
   },
   validate: function validateForm(){
@@ -106,7 +106,6 @@ var formMixin = {
     for(var inptKey in this.refs){
         validationMap[inptKey] = this.refs[inptKey].validate();
     }
-    validationMap["login"] =  "Le login est invalide";
     this.setState({error: validationMap});
     //console.log(validationMap);
   },

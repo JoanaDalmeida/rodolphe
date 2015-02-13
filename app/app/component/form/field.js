@@ -29,8 +29,18 @@ var FieldMixin = {
         </label>);
     }
   },
+  /**
+   * Validate the field.
+   * @return {object} - undefined if valid, {name: "errors"} if not valid.
+   */
   validate: function(){
-    this.refs['input'].validate();
+    return this.refs['input'].validate();
+  },
+  /**
+   * Get the value from the field.
+   */
+  getValue: function(){
+    return this.refs['input'].getValue();
   },
   input: function(){
     var inputClassName = "col-sm-" + (12 - this.props.labelSize);

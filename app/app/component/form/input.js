@@ -9,6 +9,21 @@ var inputMixin = {
     };
   },
   /**
+   * Validate the input.
+   * @return {object}
+   */
+  validate: function validateInput(){
+    var value = this.getValue();
+  },
+  /**
+   * Get the value from the form.
+   */
+  getValue: function getValue(){
+    return {
+      [this.props.name]:  this.getDOMNode().value
+    };
+  },
+  /**
    * Render an input.
    * @return {[type]} [description]
    */
@@ -19,7 +34,7 @@ var inputMixin = {
           name={this.props.name}
           value={this.props.value}
           type={this.props.type}
-          className={this.props.css} 
+          className={this.props.css}
         />
     );
   }

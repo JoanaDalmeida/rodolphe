@@ -2,6 +2,7 @@ var React = require('react');
 var Field =  require('./field').component;
 var Select =  require('./select').component;
 var Button =  require('./button').component;
+var assign = require('object-assign');
 var formMixin = {
   getDefaultProps: ()=>{
     return {
@@ -94,7 +95,7 @@ var formMixin = {
   _getEntity: function(){
     return {login: "pierr", password: "pierre"};
   },
-  _handleSubmitForm: function(e){
+  _handleSubmitForm: function handleSumbitForm(e){
     e.preventDefault();
     console.log("submit", this.refs);
     this.validate();
@@ -104,7 +105,7 @@ var formMixin = {
   validate: function validateForm(){
     var validationMap = {};
     for(var inptKey in this.refs){
-        validationMap[inptKey] = this.refs[inptKey].validate();
+        assign(validationMap,  {[inptKey]: this.refs[inptKey].validate()});
     }
     this.setState({error: validationMap});
     //console.log(validationMap);

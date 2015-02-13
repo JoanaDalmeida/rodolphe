@@ -14,14 +14,18 @@ var inputMixin = {
    */
   validate: function validateInput(){
     var value = this.getValue();
+    if(value === undefined || value === ""){
+      return `Le champ ${this.props.name} est requis`;
+    }
+    if(this.props.validator){
+      return this.props.validator(value);
+    }
   },
   /**
    * Get the value from the form.
    */
   getValue: function getValue(){
-    return {
-      [this.props.name]:  this.getDOMNode().value
-    };
+    return this.getDOMNode().value;
   },
   /**
    * Render an input.

@@ -6,7 +6,7 @@ var Block = require('../../component/form/block').component;
 
 module.exports =  React.createClass({
   mixins: [formMixin],
-  action: actionUser,
+  actions: actionUser,
   renderContent:function (){
     return(
       <Block title={"Adresse de l'utilisateur"}>

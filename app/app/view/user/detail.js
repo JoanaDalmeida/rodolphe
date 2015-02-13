@@ -7,16 +7,7 @@ var UserStore = require('../../store/user');
 module.exports =  React.createClass({
   mixins: [formMixin],
   stores: [{name: "user", value: UserStore}],
- /* registerListeners: function registerUserDetailListeners(){
-    UserStore.addChangeListener(this._onChange);
-  },
-  unregisterListeners: function unregisterUserDetailListeners(){
-    UserStore.removeChangeListener(this._onChange);
-  },
-  getStateFromStores: function getStateFromStores(){
-    return UserStore.get(this.props.id);
-  },*/
-  action: actionsUser,
+  actions: actionsUser,
 
   renderContent:function renderUserDetail(){
     return(

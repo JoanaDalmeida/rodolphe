@@ -31,7 +31,8 @@
     "vinyl-source-stream": "^1.0.0",
     "gulp-less": "~2.0.1",
     "gulp-concat": "~2.4.3",
-    "hapi": "~8.1.0"
+    "hapi": "~8.1.0",
+    "6to5ify": "~4.1.1"
   },
   "dependencies": {
     "backbone": "^1.1.2",

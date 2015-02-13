@@ -1,8 +1,10 @@
 var gulp = require('gulp');
+var to5ify = require("6to5ify");
 gulp.task('browserify', function(){
   var browserify = require('browserify');
   var source = require('vinyl-source-stream');
   return browserify(({entries: ['./index.js'], extensions: ['.jsx']}))
+  .transform(to5ify)
   .bundle()
   //Pass desired output filename to vinyl-source-stream
   .pipe(source('rodolphe.js'))

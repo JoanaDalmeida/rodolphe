@@ -19,12 +19,16 @@ var scopeMixin = {
     }return this.state.value;
   },
   handleOnclick: function(event){
-    this.setState({value: event.target.value});
+    this.setState({value: event.target.value, isDeployed: false});
   },
   getValue: function(){
     return this.state.value;
   },
+  handleDeployClick: function(){
+    this.setState({isDeployed: !this.state.isDeployed});
+  },
   renderScopeList: function renderScopeList(){
+    if(!this.state.isDeployed){return;}
     return this.props.list.map((scope)=>{
       var selectedValue = this.state.value === scope.code ? "active": "";
       return(
@@ -36,8 +40,8 @@ var scopeMixin = {
   },
   render: function renderScopeComponent(){
     return (
-      <div className="search-scope">
-        <button>{this.buttonScopeLabel()}</button>
+      <div className={this.props.className + " search-scope"}>
+        <div onClick={this.handleDeployClick}><span>{"scope: " + this.buttonScopeLabel()}</span><i className={"fa fa-caret-square-o-"+ (this.state.isDeployed ? "up": "down")}></i></div>
         <ul className="list-group">
           {this.renderScopeList()}
         </ul>

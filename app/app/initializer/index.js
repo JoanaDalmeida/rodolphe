@@ -1,3 +1,6 @@
+global.$ = require('jquery');//(window);
+global.Backbone = require('backbone');
+Backbone.$ = $;
 //React tap event initializer.
 var injectTapEventPlugin = require("react-tap-event-plugin");
 

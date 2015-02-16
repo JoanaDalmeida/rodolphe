@@ -81,7 +81,9 @@ var formMixin = {
   },
   componentWillUnmount: function(){
     this._unRegisterListeners();
-    this.unregisterListeners();
+    if(this.unregisterListeners){
+      this.unregisterListeners();
+    }
   },
   _getId: function(){
     return this.state.id;

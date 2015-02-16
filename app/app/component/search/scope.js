@@ -19,16 +19,16 @@ var scopeMixin = {
     }return this.state.value;
   },
   handleOnclick: function(event){
-    console.log("click", event);
+    this.setState({value: event.target.value});
   },
   getValue: function(){
     return this.state.value;
   },
   renderScopeList: function renderScopeList(){
     return this.props.list.map((scope)=>{
-      var selectedValue = this.props.value === scope.code ? "active": "";
+      var selectedValue = this.state.value === scope.code ? "active": "";
       return(
-        <li key={scope.code} value={scope.code} className={selectedValue} onClick={this.handleOnclick}>
+        <li key={scope.code} value={scope.code} className={"list-group-item " + selectedValue} onClick={this.handleOnclick}>
           {scope.label}
         </li>
       );
@@ -38,7 +38,7 @@ var scopeMixin = {
     return (
       <div className="search-scope">
         <button>{this.buttonScopeLabel()}</button>
-        <ul>
+        <ul className="list-group">
           {this.renderScopeList()}
         </ul>
       </div>

@@ -37,7 +37,7 @@ var SearchInputMixin = {
   render:function renderSearchInput(){
     return (
       <div className="quick-search">
-        <Scope ref="scope" list={this.props.scopes} activeScope={this.props.value}/>
+        <Scope ref="scope" list={this.props.scopes} value={this.props.activeScope}/>
         <input ref="query" onKeyUp={this.props.onKeyUpHandler} type="search" value={this.props.value}/>
         <button className="btn btn-info" onClick={this.handleOnClick}>Display value</button>
         <span ref="help">{"Choose your scope"}</span>

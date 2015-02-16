@@ -14,7 +14,9 @@ gulp.task('browserify', function(){
 
 gulp.task('style', function() {
   var less = require('gulp-less');
-  gulp.src(['./app/styles/custom.less'])
+  var concat = require('gulp-concat');
+  gulp.src(['./app/styles/component/**/*.less'])
+    .pipe(concat('custom'))
     .pipe(less())
     .pipe(gulp.dest('./example/css'));
 });
